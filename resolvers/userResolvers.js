@@ -1,18 +1,18 @@
-const http = require("../http");
+const http = require('../http');
 
 module.exports = {
-  Query: {
+  Mutation: {
     login: async (_, { email, password }) => {
       try {
-        const { data } = await http.post("/users/login", {
+        const { data } = await http.post('/users/login', {
           email,
-          pwd: password
+          pwd: password,
         });
 
         return data;
       } catch (e) {
         console.error(e);
       }
-    }
-  }
+    },
+  },
 };

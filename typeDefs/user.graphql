@@ -1,11 +1,11 @@
-type Query {
-    login(email: String!, password: String!): User
+type Mutation {
+  login(email: String!, password: String!): User
 }
-  
+
 type User {
-    id: ID!
-    email: String!
-    username: String!
-    password: String!
-    token: String
+  id: ID!
+  email: String!
+  username: String!
+  password: String!
+  token: String
 }
