@@ -1,6 +1,6 @@
 type Query {
   providers: [Provider]
-  provider(id: String): Provider
+  provider(id: ID): Provider
 }
 
 type Mutation {

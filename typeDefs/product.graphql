@@ -1,14 +1,25 @@
 type Query {
-    products: [Product]
+  products: [Product]
+  product(id: ID): Product
 }
-  
-type Product {
-    id: ID!
+type Mutation {
+  products(
     codProduct: String!
     description: String!
     id_ProductType: Int!
-    id_Provider: Int
-    stock: Float
-    minimumStock: Float
-    price: Float
+    id_Provider: Int!
+    stock: Float!
+    minimumStock: Float!
+    price: Float!
+  ): Product
+}
+type Product {
+  id: ID!
+  codProduct: String!
+  description: String!
+  id_ProductType: Int!
+  id_Provider: Int!
+  stock: Float
+  minimumStock: Float
+  price: Float
 }

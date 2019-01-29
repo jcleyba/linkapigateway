@@ -8,7 +8,8 @@ module.exports = {
 
         return data;
       } catch (e) {
-        console.error(e.message);
+        console.error(e.response.status);
+        return e;
       }
     },
 
@@ -19,6 +20,7 @@ module.exports = {
         return data[0];
       } catch (e) {
         console.error(e.message);
+        return e;
       }
     },
   },
@@ -31,6 +33,7 @@ module.exports = {
         return data;
       } catch (e) {
         console.error(e.message);
+        return e;
       }
     },
   },
