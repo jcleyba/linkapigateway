@@ -1,0 +1,23 @@
+type Query {
+  providers: [Provider]
+  provider(id: String): Provider
+}
+
+type Mutation {
+  providers(
+    cuit: String!
+    name: String!
+    apellido: String!
+    razonSocial: String!
+    email: String!
+  ): Provider
+}
+
+type Provider {
+  id: ID!
+  cuit: String!
+  name: String!
+  razonSocial: String!
+  apellido: String!
+  email: String!
+}
