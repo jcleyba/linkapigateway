@@ -17,7 +17,7 @@ module.exports = {
       try {
         const { data } = await http.get(`/providers/search/${id}`);
 
-        return data[0];
+        return data;
       } catch (e) {
         console.error(e.message);
         return e;
