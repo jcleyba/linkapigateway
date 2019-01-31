@@ -1,10 +1,12 @@
 const http = require('../http');
 
+const endpoint = '/providers';
+
 module.exports = {
   Query: {
     providers: async (parent, args, context) => {
       try {
-        const { data } = await http.get('/providers');
+        const { data } = await http.get(`${endpoint}`);
 
         return data;
       } catch (e) {
@@ -15,7 +17,7 @@ module.exports = {
 
     provider: async (parent, { id }, context) => {
       try {
-        const { data } = await http.get(`/providers/search/${id}`);
+        const { data } = await http.get(`${endpoint}/search/${id}`);
 
         return data;
       } catch (e) {

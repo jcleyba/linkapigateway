@@ -1,6 +1,7 @@
 type Query {
-  products: [Product]
+  products(id: ID): [Product]
   product(id: ID): Product
+  search(term: String): [Product]
 }
 type Mutation {
   products(
