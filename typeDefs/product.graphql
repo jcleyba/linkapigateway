@@ -11,7 +11,8 @@ type Mutation {
     id_Provider: Int!
     stock: Float!
     minimumStock: Float!
-    price: Float!
+    salePrice: Float!
+    costPrice: Float!
   ): Product
 }
 type Product {
@@ -22,5 +23,6 @@ type Product {
   id_Provider: Int!
   stock: Float
   minimumStock: Float
-  price: Float
+  salePrice: Float!
+  costPrice: Float!
 }

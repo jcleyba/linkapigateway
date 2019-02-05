@@ -6,10 +6,12 @@ type Query {
 type Mutation {
   providers(
     cuit: String!
-    name: String
-    apellido: String
+    name: String!
+    apellido: String!
     razonSocial: String!
     email: String!
+    phoneNumber1: Float
+    phoneNumber2: Float
   ): Provider
 }
 
@@ -20,4 +22,6 @@ type Provider {
   razonSocial: String!
   apellido: String
   email: String!
+  phoneNumber1: Float
+  phoneNumber2: Float
 }
