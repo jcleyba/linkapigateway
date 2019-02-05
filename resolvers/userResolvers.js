@@ -15,4 +15,16 @@ module.exports = {
       }
     },
   },
+
+  Query: {
+    auth: async (_, params) => {
+      try {
+        const { data } = await http.get('/users/auth');
+
+        return data;
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  },
 };
