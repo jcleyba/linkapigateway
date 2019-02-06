@@ -5,6 +5,7 @@ type Query {
 
 type Mutation {
   providers(
+    id: ID
     cuit: String!
     name: String!
     apellido: String!

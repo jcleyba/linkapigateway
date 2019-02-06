@@ -25,6 +25,7 @@ module.exports = {
         return data;
       } catch (e) {
         console.error(e.message);
+
         return e;
       }
     },
@@ -41,10 +42,17 @@ module.exports = {
   },
   Mutation: {
     products: async (parent, args, context) => {
-      try {
-        const { data } = await http.post('/products', args);
+      let resp = {};
+      const { id, ...otherArgs } = args;
 
-        return data;
+      try {
+        if (id) {
+          resp = await http.put(`/products/${id}`, args);
+        } else {
+          resp = await http.post(`${endpoint}`, otherArgs);
+        }
+
+        return resp.data;
       } catch (e) {
         console.error(e.message);
         return e;

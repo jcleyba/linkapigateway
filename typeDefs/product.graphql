@@ -5,12 +5,13 @@ type Query {
 }
 type Mutation {
   products(
+    id: ID
     codProduct: String!
     description: String!
     id_ProductType: Int!
     id_Provider: Int!
     stock: Float!
-    minimumStock: Float!
+    minimumStock: Float
     salePrice: Float!
     costPrice: Float!
   ): Product

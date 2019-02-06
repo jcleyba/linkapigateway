@@ -29,10 +29,16 @@ module.exports = {
 
   Mutation: {
     providers: async (parent, args, context) => {
+      let resp = {};
+      const { id, ...otherArgs } = args;
       try {
-        const { data } = await http.post('/providers', args);
+        if (id) {
+          resp = await http.put(`${endpoint}/${id}`, args);
+        } else {
+          resp = await http.post(`${endpoint}`, otherArgs);
+        }
 
-        return data;
+        return resp.data;
       } catch (e) {
         console.error(e.message);
         return e;
