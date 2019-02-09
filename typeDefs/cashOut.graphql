@@ -1,0 +1,15 @@
+type Query {
+  cashouts(id: ID): [CashOut]
+  cashout(id: ID): CashOut
+}
+type Mutation {
+  cashout(id: ID, description: String!, amount: Float!, id_User: Int!): CashOut
+  removecashout(id: ID!): CashOut
+}
+type CashOut {
+  id: ID!
+  description: String!
+  amount: Float!
+  id_User: Int!
+  updatedAt: String
+}

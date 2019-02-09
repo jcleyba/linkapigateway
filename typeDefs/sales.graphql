@@ -1,0 +1,18 @@
+type Query {
+  sales(id: ID): [Product]
+  sale(id: ID): Product
+}
+type Mutation {
+  sales(
+    type: String!
+    amount: Float!
+    id_User: Int
+    details: [ProductDetail]
+  ): ID
+}
+type Sale {
+  id: ID!
+  number: Int
+  type: String!
+  amount: Float!
+}
