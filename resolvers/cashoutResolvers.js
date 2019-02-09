@@ -44,9 +44,9 @@ module.exports = {
     },
     removecashout: async (parent, { id }, context) => {
       try {
-        const resp = await http.delete(`${endpoint}/${id}`);
+        const { data } = await http.delete(`${endpoint}/${id}`);
 
-        return resp;
+        return data;
       } catch (e) {
         console.error(e.message);
         return e;
