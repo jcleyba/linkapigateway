@@ -6,8 +6,9 @@ type Mutation {
   sales(
     type: String!
     amount: Float!
-    id_User: Int
-    details: [ProductDetail]
+    id_User: Int!
+    details: [ProductDetail]!
+    id_PaymentMethod: Int!
   ): ID
 }
 type Sale {
