@@ -6,6 +6,7 @@ const Provider = require('./providerResolvers');
 const Cashout = require('./cashoutResolvers');
 const Sales = require('./saleResolvers');
 const PaymentMethods = require('./paymentMethodResolvers');
+const CashShifts = require('./cashShiftResolvers');
 const ProductTypes = require('./productTypeResolvers');
 
 module.exports = mergeResolvers([
@@ -15,5 +16,6 @@ module.exports = mergeResolvers([
   Cashout,
   Sales,
   PaymentMethods,
+  CashShifts,
   ProductTypes,
 ]);
