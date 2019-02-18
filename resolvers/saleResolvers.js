@@ -1,6 +1,6 @@
-const http = require('../http');
+const http = require("../http");
 
-const endpoint = '/sales';
+const endpoint = "/sales";
 module.exports = {
   Query: {
     sales: async (parent, { id }, context) => {
@@ -10,6 +10,7 @@ module.exports = {
         return data;
       } catch (e) {
         console.error(e.message);
+
         return e;
       }
     },
@@ -23,7 +24,7 @@ module.exports = {
 
         return e;
       }
-    },
+    }
   },
   Mutation: {
     sales: async (parent, args, context) => {
@@ -33,8 +34,9 @@ module.exports = {
         return data;
       } catch (e) {
         console.error(e.message);
+
         return e;
       }
-    },
-  },
+    }
+  }
 };

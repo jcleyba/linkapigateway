@@ -1,5 +1,6 @@
 type Query {
     cashshifts(id: ID): [CashShift]
+    fewcashshifts(id: ID): [CashShift]
 }
 type Mutation {
     cashshift(id: ID, existingAmount: Float!, salesSum: Float, cashOutSum: Float, id_User: Int!, 
