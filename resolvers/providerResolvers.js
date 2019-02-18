@@ -1,6 +1,6 @@
-const http = require('../http');
+const http = require("../http");
 
-const endpoint = '/providers';
+const endpoint = "/providers";
 
 module.exports = {
   Query: {
@@ -11,6 +11,7 @@ module.exports = {
         return data;
       } catch (e) {
         console.error(e.response.status);
+
         return e;
       }
     },
@@ -22,9 +23,10 @@ module.exports = {
         return data;
       } catch (e) {
         console.error(e.message);
+
         return e;
       }
-    },
+    }
   },
 
   Mutation: {
@@ -41,8 +43,9 @@ module.exports = {
         return resp.data;
       } catch (e) {
         console.error(e.message);
+
         return e;
       }
-    },
-  },
+    }
+  }
 };

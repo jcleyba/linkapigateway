@@ -6,9 +6,11 @@ module.exports = {
     cashouts: async (parent, { id }, context) => {
       try {
         const { data } = await http.get(endpoint);
+
         return data;
       } catch (e) {
         console.error(e.message);
+
         return e;
       }
     },
@@ -39,6 +41,7 @@ module.exports = {
         return resp.data;
       } catch (e) {
         console.error(e.message);
+
         return e;
       }
     },
@@ -49,6 +52,7 @@ module.exports = {
         return data;
       } catch (e) {
         console.error(e.message);
+
         return e;
       }
     }
