@@ -1,11 +1,22 @@
-const http = require("../http");
+const http = require('../http');
 
-const endpoint = "/sales";
+const endpoint = '/sales';
 module.exports = {
   Query: {
     sales: async (parent, { id }, context) => {
       try {
         const { data } = await http.get(endpoint);
+
+        return data;
+      } catch (e) {
+        console.error(e.message);
+
+        return e;
+      }
+    },
+    salesbyrange: async (parent, { from, to }, context) => {
+      try {
+        const { data } = await http.get(`${endpoint}?from=${from}&to=${to}`);
 
         return data;
       } catch (e) {
@@ -24,7 +35,7 @@ module.exports = {
 
         return e;
       }
-    }
+    },
   },
   Mutation: {
     sales: async (parent, args, context) => {
@@ -37,6 +48,6 @@ module.exports = {
 
         return e;
       }
-    }
-  }
+    },
+  },
 };

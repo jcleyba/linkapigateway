@@ -1,5 +1,6 @@
 type Query {
   sales(number: Int, type: String): [Sale]
+  salesbyrange(from: String!, to: String!): SalesByRange
   sale(number: Int, type: String): Sale
 }
 type Mutation {
@@ -18,4 +19,9 @@ type Sale {
   user: User
   paymentMethod: PaymentMethod
   createdAt: String
+}
+
+type SalesByRange {
+  sales: [Sale]
+  sum: Float
 }
