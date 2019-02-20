@@ -1,6 +1,6 @@
 type Query {
-  saledetails(id: ID): [Product]
-  saledetail(id: ID): Product
+  saledetails(id: ID): [SaleDetail]
+  saledetail(id: ID): SaleDetail
 }
 type Mutation {
   saledetails(type: String!, amount: Float!): Sale
