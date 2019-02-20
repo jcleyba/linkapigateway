@@ -1,6 +1,6 @@
 type Query {
-  sales(id: ID): [Product]
-  sale(id: ID): Product
+  sales(number: Int, type: String): [Sale]
+  sale(number: Int, type: String): Sale
 }
 type Mutation {
   sales(
@@ -9,11 +9,13 @@ type Mutation {
     id_User: Int!
     details: [ProductDetail]!
     id_PaymentMethod: Int!
-  ): ID
+  ): Sale
 }
 type Sale {
-  id: ID!
   number: Int
   type: String!
   amount: Float!
+  user: User
+  paymentMethod: PaymentMethod
+  createdAt: String
 }
