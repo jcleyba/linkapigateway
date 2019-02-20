@@ -10,7 +10,7 @@ type Mutation {
     id_User: Int!
     details: [ProductDetail]!
     id_PaymentMethod: Int!
-  ): Sale
+  ): ID
 }
 type Sale {
   number: Int
