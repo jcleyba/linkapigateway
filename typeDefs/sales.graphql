@@ -1,6 +1,6 @@
 type Query {
   sales(number: Int, type: String): [Sale]
-  salesbyrange(from: String!, to: String!): SalesByRange
+  salesbyrange(id: ID, from: String!, to: String!): SalesByRange
   sale(number: Int, type: String): Sale
 }
 type Mutation {
