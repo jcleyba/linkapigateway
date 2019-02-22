@@ -1,6 +1,6 @@
-const http = require("../http");
+const http = require('../http');
 
-const endpoint = "/cashShifts";
+const endpoint = '/cashShifts';
 module.exports = {
   Query: {
     cashshifts: async (parent, args, context) => {
@@ -13,7 +13,7 @@ module.exports = {
           const resp = {
             ...shift,
             sumPrior,
-            shiftStart
+            shiftStart,
           };
 
           sumPrior = shift.existingAmount;
@@ -37,7 +37,7 @@ module.exports = {
             resp = {
               ...shift,
               sumPrior: array[i + 1].existingAmount,
-              shiftStart: array[i + 1].createdAt
+              shiftStart: array[i + 1].createdAt,
             };
           }
 
@@ -48,7 +48,7 @@ module.exports = {
 
         return e;
       }
-    }
+    },
   },
   Mutation: {
     cashshift: async (parent, args, context) => {
@@ -61,6 +61,6 @@ module.exports = {
 
         return e;
       }
-    }
-  }
+    },
+  },
 };

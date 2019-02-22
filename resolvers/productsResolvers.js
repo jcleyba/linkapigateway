@@ -1,6 +1,6 @@
-const http = require("../http");
+const http = require('../http');
 
-const endpoint = "/products";
+const endpoint = '/products';
 module.exports = {
   Query: {
     products: async (parent, { id }, context) => {
@@ -40,7 +40,7 @@ module.exports = {
 
         return e;
       }
-    }
+    },
   },
   Mutation: {
     products: async (parent, args, context) => {
@@ -60,6 +60,6 @@ module.exports = {
 
         return e;
       }
-    }
-  }
+    },
+  },
 };

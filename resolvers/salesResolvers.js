@@ -14,11 +14,18 @@ module.exports = {
         return e;
       }
     },
-    salesbyrange: async (parent, { from, to }, context) => {
+    salesbyrange: async (parent, { id, from, to }, context) => {
       try {
-        const { data } = await http.get(`${endpoint}?from=${from}&to=${to}`);
+        let resp = {};
+        if (id) {
+          resp = await http.get(
+            `/products/${id}${endpoint}?from=${from}&to=${to}`
+          );
+        } else {
+          resp = await http.get(`${endpoint}?from=${from}&to=${to}`);
+        }
 
-        return data;
+        return resp.data;
       } catch (e) {
         console.error(e.message);
 
