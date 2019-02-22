@@ -49,12 +49,24 @@ module.exports = {
 
       try {
         if (id) {
-          resp = await http.put(`/products/${id}`, args);
+          resp = await http.put(`${endpoint}/${id}`, args);
         } else {
           resp = await http.post(`${endpoint}`, otherArgs);
         }
-
         return resp.data;
+      } catch (e) {
+        console.error(e.message);
+
+        return e;
+      }
+    },
+    productsbulkupdate: async (parent, args, context) => {
+      const { prods: products = [] } = args;
+
+      try {
+        const { data } = await http.put(`${endpoint}`, { products });
+
+        return data;
       } catch (e) {
         console.error(e.message);
 
