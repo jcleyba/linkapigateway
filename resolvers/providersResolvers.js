@@ -1,6 +1,6 @@
-const http = require("../http");
+const http = require('../http');
 
-const endpoint = "/providers";
+const endpoint = '/providers';
 
 module.exports = {
   Query: {
@@ -26,7 +26,7 @@ module.exports = {
 
         return e;
       }
-    }
+    },
   },
 
   Mutation: {
@@ -46,6 +46,6 @@ module.exports = {
 
         return e;
       }
-    }
-  }
+    },
+  },
 };

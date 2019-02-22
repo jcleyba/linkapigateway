@@ -1,6 +1,6 @@
-const http = require("../http");
+const http = require('../http');
 
-const endpoint = "/paymentMethods";
+const endpoint = '/paymentMethods';
 module.exports = {
   Query: {
     paymentmethods: async (parent, args, context) => {
@@ -13,6 +13,6 @@ module.exports = {
 
         return e;
       }
-    }
-  }
+    },
+  },
 };
