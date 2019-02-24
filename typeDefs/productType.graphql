@@ -2,6 +2,10 @@ type Query {
   producttypes: [ProductType]
 }
 
+type Mutation {
+  producttypes(description: String!): ProductType
+}
+
 type ProductType {
   id: ID!
   description: String!

@@ -15,4 +15,17 @@ module.exports = {
       }
     },
   },
+  Mutation: {
+    producttypes: async (parent, args, context) => {
+      try {
+        const { data } = await http.post(endpoint, args);
+
+        return data;
+      } catch (e) {
+        console.error(e.message);
+
+        return e;
+      }
+    },
+  },
 };
