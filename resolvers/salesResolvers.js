@@ -3,29 +3,11 @@ const http = require('../http');
 const endpoint = '/sales';
 module.exports = {
   Query: {
-    sales: async (parent, { id }, context) => {
+    sales: async (parent, { from, to }, context) => {
       try {
-        const { data } = await http.get(endpoint);
+        const { data } = await http.get(`${endpoint}?from=${from}&to=${to}`);
 
         return data;
-      } catch (e) {
-        console.error(e.message);
-
-        return e;
-      }
-    },
-    salesbyrange: async (parent, { id, from, to }, context) => {
-      try {
-        let resp = {};
-        if (id) {
-          resp = await http.get(
-            `/products/${id}${endpoint}?from=${from}&to=${to}`
-          );
-        } else {
-          resp = await http.get(`${endpoint}?from=${from}&to=${to}`);
-        }
-
-        return resp.data;
       } catch (e) {
         console.error(e.message);
 
