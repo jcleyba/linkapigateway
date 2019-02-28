@@ -1,5 +1,5 @@
 type Query {
-  saledetails(id: ID): [SaleDetail]
+  saledetails(id: ID, from: String!, to: String!): SaleDetailByRange
   saledetail(id: ID): SaleDetail
 }
 type Mutation {
@@ -9,11 +9,19 @@ type SaleDetail {
   id: ID!
   saleNumber: Int!
   type: String!
-  amount: Float!
+  createdAt: String!
+  quantity: Float
+  price: Float
+  product: Product 
 }
 
 input ProductDetail {
   id_Product: Int!
   quantity: Float!
   price: Float!
+}
+
+type SaleDetailByRange {
+  sum: Float
+  sales: [SaleDetail]
 }
