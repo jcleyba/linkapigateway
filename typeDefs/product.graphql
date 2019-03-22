@@ -14,6 +14,7 @@ type Mutation {
     minimumStock: Float
     salePrice: Float!
     costPrice: Float!
+    available: Boolean
   ): Product
 
   productsbulkupdate(prods: [ProductInput]!): [Product]
@@ -28,6 +29,7 @@ type Product {
   minimumStock: Float
   salePrice: Float!
   costPrice: Float!
+  available: Boolean
 }
 
 input ProductInput {
