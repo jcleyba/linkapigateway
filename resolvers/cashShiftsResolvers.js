@@ -39,6 +39,12 @@ module.exports = {
               sumPrior: array[i + 1].existingAmount,
               shiftStart: array[i + 1].createdAt,
             };
+          } else {
+            resp = {
+              ...shift,
+              sumPrior: 0,
+              shiftStart: '2019-02-01',
+            };
           }
 
           return resp;
